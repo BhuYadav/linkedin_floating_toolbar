@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LinkedIn Floating Toolbar</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <p class="eyebrow">WRITE WITHOUT THE SCROLL</p>
+  <h1>Floating Toolbar</h1>
+  <p>Keep LinkedIn’s article and newsletter formatting tools within reach.</p>
+  <label class="toggle"><span>Keep toolbar visible</span><input id="enabled" type="checkbox" role="switch"></label>
+  <label for="offset">Extra space below the page header</label>
+  <div class="range"><input id="offset" type="range" min="0" max="160" step="4"><output id="offset-value" for="offset">0 px</output></div>
+  <p id="status" class="status" role="status">Checking this tab…</p>
+  <button id="pick" type="button">Choose toolbar manually</button>
+  <p class="hint">If detection misses your toolbar, choose it manually, then click a formatting control. Press Esc to cancel.</p>
+  <p class="privacy">Runs locally. Stores settings only.</p>
+  <script src="popup.js"></script>
+</body>
+</html>

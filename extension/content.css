@@ -1,0 +1,13 @@
+[data-lft-pinned] {
+  position: fixed !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  z-index: 1000 !important;
+  background-color: var(--lft-background, #f3f2ef) !important;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, .16) !important;
+  border-radius: 12px !important;
+  transform: none !important;
+}
+[data-lft-placeholder] { pointer-events: none; visibility: hidden; }
+[data-lft-picking] { cursor: crosshair !important; }
+[data-lft-highlight] { outline: 3px solid #0a66c2 !important; outline-offset: 3px; }

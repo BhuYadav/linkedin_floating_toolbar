@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Floating Toolbar test editor</title>
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; background: #f5f6f8; color: #162938; font: 18px/1.7 system-ui, sans-serif; }
+header { position: fixed; top: 0; left: 0; right: 0; height: 56px; background: #fff; border-bottom: 1px solid #dce1e6; z-index: 1001; padding: 10px 32px; font-weight: bold; }
+main { max-width: 940px; margin: 130px auto 0; background: #fff; padding: 26px; border-radius: 16px; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px; border-radius: 30px; background: #f3f2ef; }
+button { border: none; background: transparent; padding: 6px 12px; color: inherit; font: inherit; cursor: pointer; }
+button:hover { background: #dceaf7; border-radius: 8px; }
+.editor { min-height: 2100px; outline: none; padding: 24px 8px; }
+.editor h1 { font-size: 34px; line-height: 1.25; }
+.editor p { margin: 24px 0; }
+footer { height: 900px; padding: 60px; text-align: center; }
+</style></head>
+<body>
+<header>Writing studio · test fixture</header>
+<main id="draft">
+<div id="toolbar" class="toolbar" role="toolbar" aria-label="Article formatting">
+  <button aria-label="Style">Style ▾</button>
+  <button id="bold" aria-label="Bold"><strong>B</strong></button>
+  <button aria-label="Italic"><em>I</em></button>
+  <button aria-label="Bullet list">• List</button>
+  <button aria-label="Numbered list">1. List</button>
+  <button aria-label="Block quote">❝</button>
+  <button aria-label="Insert link">Link</button>
+  <button aria-label="Insert image">Image</button>
+</div>
+<div id="editor" class="editor" contenteditable="true" role="textbox" aria-label="Article content">
+<h1>Good writing needs room to think.</h1>
+<p>This is a local test editor, not a LinkedIn screenshot. Scroll down to try the floating formatting toolbar.</p>
+<p>The toolbar should remain within reach while the article grows, without replacing the original buttons or their event handlers.</p>
+<p id="selection-target">Select these words and click Bold.</p>
+<p>Keep scrolling. The formatting tools follow the editor, preserve the page layout, and return to their original position when you scroll back up.</p>
+</div>
+</main>
+<footer>End of editor. The floating toolbar should disappear before this section.</footer>
+<script>
+document.querySelector('#bold').addEventListener('mousedown', event => event.preventDefault());
+document.querySelector('#bold').addEventListener('click', () => {
+  document.execCommand('bold');
+  window.boldClicks = (window.boldClicks || 0) + 1;
+});
+</script>
+</body></html>

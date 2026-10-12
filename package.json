@@ -1,0 +1,15 @@
+{
+  "name": "linkedin-floating-toolbar",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A local-only Chrome extension for LinkedIn's article and newsletter formatting toolbar.",
+  "license": "MIT",
+  "scripts": {
+    "check": "node --check extension/content.js && node --check extension/popup.js && node --check tests/browser.test.cjs",
+    "test": "node --test --test-concurrency=1 tests/browser.test.cjs",
+    "package": "python3 scripts/package.py"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}
